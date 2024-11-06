@@ -2,7 +2,9 @@ FROM golang:alpine as build
 
 RUN apk add --no-cache git
 WORKDIR /src
-RUN git clone --no-cache https://github.com/baibaomen/traefik-casdoor-auth.git
+RUN git clone https://github.com/baibaomen/traefik-casdoor-auth.git && \
+    cd traefik-casdoor-auth && \
+    git pull origin main
 WORKDIR /src/traefik-casdoor-auth/cmd/webhook
 RUN GIN_MODE=release go build
 
