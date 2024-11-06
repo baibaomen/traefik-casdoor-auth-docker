@@ -6,7 +6,7 @@ Either mount the [plugin config](https://github.com/casdoor/traefik-casdoor-auth
 
 ```
 CASDOOR_ENDPOINT
-CASDOOR_ClIENT_ID
+CASDOOR_CLIENT_ID
 CASDOOR_CLIENT_SECRET
 CASDOOR_ORGANIZATION
 CASDOOR_APPLICATION
@@ -19,13 +19,13 @@ Compose example:
 version: '3'
 services:
   webhook:
-    image: ghcr.io/lostb1t/traefik-casdoor-auth:latest
+    image: baibaomen/traefik-casdoor-auth:latest
     ports:
       - 9999:9999
     restart: unless-stopped
     environment:
       CASDOOR_ENDPOINT: ''
-      CASDOOR_ClIENT_ID: ''
+      CASDOOR_CLIENT_ID: ''
       CASDOOR_CLIENT_SECRET: ''
       CASDOOR_ORGANIZATION: ''
       CASDOOR_APPLICATION: ''
