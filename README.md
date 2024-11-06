@@ -69,7 +69,7 @@ services:
       - "traefik.http.services.xinference.loadbalancer.server.port=9997"
       # 认证中间件配置
       - "traefik.http.routers.xinference.middlewares=xinference-auth@docker"
-      - "traefik.http.middlewares.xinference-auth.forwardauth.address=http://xinference-auth:9999/auth"
+      - "traefik.http.middlewares.xinference-auth.forwardauth.address=https://xinference.baibaomen.com/auth"
       - "traefik.http.middlewares.xinference-auth.forwardauth.authResponseHeaders=X-Forwarded-User"
       - "traefik.http.middlewares.xinference-auth.forwardauth.authResponseHeadersRegex=^X-|Cookie|Authorization"
     networks:
